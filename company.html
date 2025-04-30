@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Company Registration/Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      color: #333;
+    }
+
+    header, footer {
+      background-color: #004080;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #0460bb;
+      padding: 0.5rem 2rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffdd57;
+    }
+
+    main {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #004c99;
+    }
+
+    form {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 800px;
+      display: none;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .active {
+      display: block !important;
+    }
+
+    footer {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Placement Cell - Company Section</h1>
+  </header>
+
+  <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="student.html">Student Section</a></li>
+        <li><a href="company.html">Company Section</a></li>
+        <li><a href="admin.html">Admin Panel</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Company Registration / Login</h2>
+    <div class="button-container">
+      <button class="btn" onclick="toggleForm('register')">Register</button>
+      <button class="btn" onclick="toggleForm('login')">Login</button>
+    </div>
+
+    <!-- Registration Form -->
+    <form id="registrationForm">
+      <h2>Company & Job Details</h2>
+      <label for="companyName">Company Name</label>
+      <input type="text" id="companyName" required>
+
+      <label for="companyType">Company Type</label>
+      <select id="companyType">
+        <option>Private</option>
+        <option>Public</option>
+        <option>Startup</option>
+        <option>Government</option>
+      </select>
+
+      <label for="industry">Industry Sector</label>
+      <input type="text" id="industry">
+
+      <label for="about">Company Description / About Us</label>
+      <textarea id="about" rows="3"></textarea>
+
+      <label for="hrName">HR/Recruiter Name</label>
+      <input type="text" id="hrName">
+
+      <label for="email">Official Email Address</label>
+      <input type="email" id="email">
+
+      <label for="phone">Contact Number</label>
+      <input type="text" id="phone">
+
+      <label for="address">Company Address</label>
+      <textarea id="address" rows="2"></textarea>
+
+      <label for="jobTitle">Job Title/Designation</label>
+      <input type="text" id="jobTitle">
+
+      <label for="skills">Required Skills</label>
+      <input type="text" id="skills">
+
+      <label for="location">Job Location</label>
+      <input type="text" id="location">
+
+      <label for="jobType">Job Type</label>
+      <select id="jobType">
+        <option>Full-time</option>
+        <option>Internship</option>
+        <option>Contract</option>
+        <option>Remote</option>
+      </select>
+
+      <label for="vacancies">Number of Vacancies</label>
+      <input type="number" id="vacancies">
+
+      <label for="mode">Mode of Hiring</label>
+      <select id="mode">
+        <option>Online</option>
+        <option>Offline</option>
+      </select>
+
+      <label for="courses">Eligible Courses / Streams</label>
+      <input type="text" id="courses">
+
+      <label for="criteria">Eligibility Criteria</label>
+      <textarea id="criteria" rows="2"></textarea>
+
+      <label for="process">Selection Process</label>
+      <textarea id="process" rows="2"></textarea>
+
+      <label for="package">Package</label>
+      <input type="text" id="package">
+
+      <button type="submit" class="btn" style="margin-top: 1.5rem;">Submit</button>
+    </form>
+
+    <!-- Login Form -->
+    <form id="loginForm">
+      <h2>Company Login</h2>
+      <label for="loginEmail">Email</label>
+      <input type="email" id="loginEmail" required>
+
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" required>
+
+      <button type="submit" class="btn" style="margin-top: 1.5rem;">Login</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Placement Cell</p>
+  </footer>
+
+  <script>
+    function toggleForm(formType) {
+      const registerForm = document.getElementById("registrationForm");
+      const loginForm = document.getElementById("loginForm");
+
+      if (formType === "register") {
+        registerForm.classList.add("active");
+        loginForm.classList.remove("active");
+      } else {
+        loginForm.classList.add("active");
+        registerForm.classList.remove("active");
+      }
+    }
+  </script>
+
+  <script>
+  // Handle Registration Form Submission
+  document.getElementById("registrationForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent page reload
+
+    const companyName = document.getElementById("companyName").value.trim();
+    const email = document.getElementById("email").value.trim();
+
+    if (!companyName || !email) {
+      alert("⚠️ Please fill out all required fields.");
+      return;
+    }
+
+    // You can collect other fields here or send the data to a backend
+    console.log("✅ Registration Submitted:", companyName, email);
+    alert(`✅ Thank you, ${companyName}! Your registration has been received.`);
+
+    this.reset();
+  });
+
+  // Handle Login Form Submission
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent page reload
+
+    const loginEmail = document.getElementById("loginEmail").value.trim();
+    const loginPassword = document.getElementById("loginPassword").value.trim();
+
+    if (!loginEmail || !loginPassword) {
+      alert("⚠️ Please enter both email and password.");
+      return;
+    }
+
+    // Here you would verify credentials via server request
+    console.log("🔐 Login Attempt:", loginEmail);
+    alert(`✅ Logged in as ${loginEmail}`);
+
+    this.reset();
+  });
+</script>
+
+
+</body>
+</html>

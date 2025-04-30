@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #004080;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            padding: 2rem;
+        }
+
+        .contact-form h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        form {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 12px;
+            font-size: 1rem;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #003366;
+        }
+
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="student.html">Student Section</a></li>
+                <li><a href="company.html">Company Section</a></li>
+                <li><a href="admin.html">Admin Panel</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-form">
+            <h2>Contact Placement Cell</h2>
+            <form>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" required>
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" required></textarea>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Placement Cell</p>
+    </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+          e.preventDefault(); // Prevent page refresh
+      
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const message = document.getElementById('message').value.trim();
+      
+          if (!name || !email || !message) {
+            alert("⚠️ Please fill in all fields.");
+            return;
+          }
+      
+          // Log or handle the message (here we just simulate it)
+          console.log("📨 New message received:");
+          console.log("Name:", name);
+          console.log("Email:", email);
+          console.log("Message:", message);
+      
+          alert(`✅ Thank you, ${name}! Your message has been sent.`);
+      
+          // Optional: Reset the form
+          this.reset();
+        });
+      </script>
+      
+</body>
+</html>

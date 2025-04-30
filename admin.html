@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      background-color: #007bff;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 10px;
+      display: inline-block;
+    }
+    nav ul li a:hover {
+      background-color: #0056b3;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+    .admin-dashboard h2 {
+      text-align: center;
+      color: #007bff;
+    }
+    .admin-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .option-card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    .option-card h3 {
+      color: #007bff;
+    }
+    .btn {
+      background-color: #007bff;
+      color: #fff;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background-color: #034081;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto 50px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    form label {
+      display: block;
+      margin-top: 10px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    footer {
+      background-color: #034386;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="student.html">Student Section</a></li>
+        <li><a href="company.html">Company Section</a></li>
+        <li><a href="admin.html">Admin Panel</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="admin-dashboard">
+      <h2>Admin Dashboard</h2>
+
+      <div class="admin-options">
+        <div class="option-card">
+          <h3>Manage Students</h3>
+          <p>View and manage student profiles, applications, and status.</p>
+          <a href="#students" class="btn">Manage Students</a>
+        </div>
+
+        <div class="option-card">
+          <h3>Manage Companies</h3>
+          <p>Approve and manage companies that post jobs and internships.</p>
+          <a href="#companies" class="btn">Manage Companies</a>
+        </div>
+
+        <div class="option-card">
+          <h3>Manage Job Listings</h3>
+          <p>Approve, edit, or remove job/internship listings posted by companies.</p>
+          <a href="#jobs" class="btn">Manage Listings</a>
+        </div>
+
+        <div class="option-card">
+          <h3>Manage Events</h3>
+          <p>Post new events like workshops, placement drives, and more.</p>
+          <a href="#events" class="btn">Manage Events</a>
+        </div>
+      </div>
+
+      <!-- Student Table -->
+      <section id="students">
+        <h3>Student Profiles</h3>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+          <tr>
+            <td>Ravi Kumar</td>
+            <td>BCA</td>
+            <td>Pending</td>
+            <td><button class="btn">Approve</button> <button class="btn">Reject</button></td>
+          </tr>
+          <!-- Add more rows -->
+        </table>
+      </section>
+
+      <!-- Company Table -->
+      <section id="companies">
+        <h3>Company Approvals</h3>
+        <table>
+          <tr>
+            <th>Company Name</th>
+            <th>Industry</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+          <tr>
+            <td>Infosys Ltd.</td>
+            <td>IT</td>
+            <td>Pending</td>
+            <td><button class="btn">Approve</button> <button class="btn">Reject</button></td>
+          </tr>
+          <!-- Add more rows -->
+        </table>
+      </section>
+
+      <!-- Job Listings Table -->
+      <section id="jobs">
+        <h3>Job Listings</h3>
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Company</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+          <tr>
+            <td>Software Intern</td>
+            <td>Wipro</td>
+            <td>Pending</td>
+            <td><button class="btn">Approve</button> <button class="btn">Edit</button> <button class="btn">Remove</button></td>
+          </tr>
+          <!-- Add more rows -->
+        </table>
+      </section>
+
+      <!-- Event Form -->
+      <section id="events">
+        <form id="event-announcement-form">
+          <h3>Post New Event</h3>
+          <label for="event-title">Event Title</label>
+          <input type="text" id="event-title" required />
+
+          <label for="event-date">Event Date</label>
+          <input type="date" id="event-date" required />
+
+          <label for="event-description">Event Description</label>
+          <textarea id="event-description" rows="4" required></textarea>
+
+          <button type="submit" class="btn">Post Event</button>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Placement Cell</p>
+  </footer>
+
+  <script>
+    // Handle approve buttons
+    document.querySelectorAll('.btn').forEach(button => {
+      button.addEventListener('click', function () {
+        const action = button.textContent.trim();
+        const row = button.closest('tr');
+        const statusCell = row.querySelectorAll('td')[2]; // Assumes 3rd column is Status
+  
+        if (action === 'Approve') {
+          statusCell.textContent = 'Approved ✅';
+        } else if (action === 'Reject') {
+          statusCell.textContent = 'Rejected ❌';
+        } else if (action === 'Remove') {
+          row.remove(); // Removes the job listing
+        } else if (action === 'Edit') {
+          const currentTitle = row.cells[0].textContent;
+          const newTitle = prompt('Edit Job Title:', currentTitle);
+          if (newTitle) row.cells[0].textContent = newTitle;
+        }
+      });
+    });
+  </script>
+  
+  <script>
+    // Event form submission
+    document.getElementById('event-announcement-form').addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent page refresh
+  
+      // Get form values
+      const title = document.getElementById('event-title').value;
+      const date = document.getElementById('event-date').value;
+      const description = document.getElementById('event-description').value;
+  
+      // You can customize this part to store or send the event details
+      console.log("📅 New Event Posted:");
+      console.log("Title:", title);
+      console.log("Date:", date);
+      console.log("Description:", description);
+  
+      // Show success message or alert
+      alert(`🎉 Event "${title}" has been posted successfully on ${date}!`);
+  
+      // Clear the form
+      this.reset();
+    });
+  </script>
+  
+</body>
+</html>
